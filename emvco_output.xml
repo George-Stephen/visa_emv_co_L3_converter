@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EMVCoL3OnlineMessageFormat>
   <LogDetails>
-    <Date-Time>2025-06-10T19:14:25Z</Date-Time>
+    <Date-Time>2025-06-11T07:40:38Z</Date-Time>
     <LoggingTool>
       <ProductName>Inovant VTS Simulator</ProductName>
       <ProductVersion>1.0.0</ProductVersion>
@@ -48,9 +48,9 @@
           </Field>
           <Field ID="NET.0110.DE.F63.1">
             <FriendlyName>Network Identification Code</FriendlyName>
-            <FieldType>unknown</FieldType>
-            <FieldBinary>303030305E4361736520352E3120417574686F72697A6174696F6E202D20556E737065636966696564204163636F756E745E5653444320504F53204F72696720417574682030313130204F757420527370</FieldBinary>
-            <FieldViewable>0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0110 Out Rsp</FieldViewable>
+            <FieldType>AN..50</FieldType>
+            <FieldBinary>30303030</FieldBinary>
+            <FieldViewable>0000</FieldViewable>
           </Field>
         </FieldList>
       </Message>
@@ -72,14 +72,14 @@
           <Field ID="NET.0100.DE.F42">
             <FriendlyName>Card Acceptor Id Code</FriendlyName>
             <FieldType>ANS15</FieldType>
-            <FieldBinary>56616C696456616C7565</FieldBinary>
+            <FieldBinary>38363337323431343439</FieldBinary>
             <FieldViewable>8637241449</FieldViewable>
           </Field>
           <Field ID="NET.0100.DE.F63.1">
             <FriendlyName>Network Identification Code</FriendlyName>
-            <FieldType>unknown</FieldType>
-            <FieldBinary>56616C696456616C7565</FieldBinary>
-            <FieldViewable>0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0100 In Req</FieldViewable>
+            <FieldType>AN..50</FieldType>
+            <FieldBinary>30303030</FieldBinary>
+            <FieldViewable>0000</FieldViewable>
           </Field>
         </FieldList>
       </Message>
