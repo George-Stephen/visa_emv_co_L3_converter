@@ -189,9 +189,24 @@ def generate_emvco_l3_xml(messages):
             
             print(f"Added field: ID={fid}, Name={fname}, Encoding='{value_for_encoding}', Viewable='{viewable_value}'")
 
+            # Optional signature stub
+            sig = ET.SubElement(root, "Signature", xmlns="http://www.w3.org/2000/09/xmldsig#")
+            signed_info = ET.SubElement(sig, "SignedInfo")
+            ET.SubElement(signed_info, "CanonicalizationMethod",
+                         Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
+            ET.SubElement(signed_info, "SignatureMethod",
+                         Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1")
+            ref = ET.SubElement(signed_info, "Reference", URI="")
+            transforms = ET.SubElement(ref, "Transforms")
+            ET.SubElement(transforms, "Transform",
+                         Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature")
+            ET.SubElement(ref, "DigestMethod", Algorithm="http://www.w3.org/2000/09/xmldsig#sha1")
+            ET.SubElement(ref, "DigestValue").text = "DummyDigest=="
+
     return root
 
 if __name__ == "__main__":
+
     # Provided log string
     log_string = '''Inovant VTS Log          
 ISO^INFO^^^20250608170112^0110 ISO Message, OUTGOING (VIS). Sending out.~sID:H01 sNAME:Header Length sDATA:16~sID:H02 sNAME:Header Flag and Format sDATA:01~sID:H03 sNAME:Text Format sDATA:02~sID:H04 sNAME:Total Message Length sDATA:007F~sID:H05 sNAME:Destination Station Id sDATA:192425~sID:H06 sNAME:Source Station Id sDATA:000000~sID:H07 sNAME:Round Trip Control Information sDATA:00~sID:H08 sNAME:BASE I Flags sDATA:0000~sID:H09 sNAME:Message Status Flags sDATA:000000~sID:H10 sNAME:Batch Number sDATA:00~sID:H11 sNAME:Reserved sDATA:000000~sID:H12 sNAME:User Information sDATA:00~sID:MTI sNAME:Message Type Indicator sDATA:0110~sID:BMP sNAME:BitMap sDATA:722022810EC08006~sID:F2 sNAME:Primary Account Number sDATA:4176662220010018~sID:F3 sNAME:Processing Code sDATA:001000~sID:F4 sNAME:Amount Transaction sDATA:000000060000~sID:F7 sNAME:Transmission Date and Time sDATA:0608140112~sID:F11 sNAME:System Trace Audit Number sDATA:154212~sID:F15 sNAME:Date, Settlement sDATA:~sID:F19 sNAME:Acquiring Country Code sDATA:404~sID:F23 sNAME:Card Sequence Number sDATA:017~sID:F25 sNAME:POS Condition Code sDATA:00~sID:F32 sNAME:Acquiring ID sDATA:458784~sID:F37 sNAME:Retrieval Reference Number sDATA:515983020180~sID:F38 sNAME:Authorization Identification Response sDATA:002710~sID:F39 sNAME:Response Code sDATA:00~sID:F41 sNAME:Card Acceptor Terminal Id sDATA:00087130~sID:F42 sNAME:Card Acceptor Id Code sDATA:8637241449     ~sID:F49 sNAME:Currency Code, Transaction sDATA:404~sID:F55 sNAME:Chip Data sDATA:~sID:F62 sNAME:Custom Payment Service Fields sDATA:0000000000000000~sID:F62 BMP sNAME:Bitmap sDATA:0000000000000000~sID:F62.2 sNAME:Transaction Identifier sDATA:~sID:F63 sNAME:SMS Private-Use Fields sDATA:8000000000~sID:F63 BMP sNAME:Bitmap sDATA:800000~sID:F63.1 sNAME:Network Identification Code sDATA:0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0110 Out Rsp
