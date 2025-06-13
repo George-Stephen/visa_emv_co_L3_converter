@@ -2,6 +2,8 @@
 from lxml import etree as ET
 from datetime import datetime, timezone
 import binascii
+import os
+import glob
 
 # Fallback EBCDIC to ASCII mapping (simplified for common characters)
 EBCDIC_TO_ASCII = {
@@ -302,27 +304,79 @@ def generate_emvco_l3_xml(messages):
 
     return root
 
+def process_log_file(input_path, output_path):
+    """
+    Process a single log file and generate an XML file.
+    """
+    try:
+        # Read the log file
+        with open(input_path, 'r', encoding='utf-8') as f:
+            log_data = f.read()
+        
+        if not log_data.strip():
+            print(f"Warning: {input_path} is empty. Skipping.")
+            return False
+
+        # Parse log and generate XML
+        print(f"\nProcessing file: {input_path}")
+        parsed_messages = parse_inovant_log(log_data)
+        
+        if not parsed_messages:
+            print(f"Warning: No valid messages found in {input_path}. Skipping.")
+            return False
+
+        # Print summary of fields
+        for msg in parsed_messages:
+            print(f"\nSummary for MTI {msg['mti']} ({msg['class']}):")
+            print(f"All extracted field IDs: {msg['all_field_ids']}")
+            print(f"Fields included in XML: {[f['id'] for f in msg['fields']]}")
+
+        xml_root = generate_emvco_l3_xml(parsed_messages)
+
+        # Write to output file
+        with open(output_path, "wb") as f:
+            f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
+            f.write(ET.tostring(xml_root, pretty_print=True, encoding="utf-8"))
+
+        print(f"✅ XML written to {output_path}")
+        return True
+
+    except UnicodeDecodeError:
+        print(f"Error: {input_path} is not a valid UTF-8 text file. Skipping.")
+        return False
+    except Exception as e:
+        print(f"Error processing {input_path}: {str(e)}")
+        return False
+
 if __name__ == "__main__":
-    # Provided log string
-    log_string = '''Inovant VTS Log          
-ISO^INFO^^^20250608170112^0110 ISO Message, OUTGOING (VIS). Sending out.~sID:H01 sNAME:Header Length sDATA:16~sID:H02 sNAME:Header Flag and Format sDATA:01~sID:H03 sNAME:Text Format sDATA:02~sID:H04 sNAME:Total Message Length sDATA:007F~sID:H05 sNAME:Destination Station Id sDATA:192425~sID:H06 sNAME:Source Station Id sDATA:000000~sID:H07 sNAME:Round Trip Control Information sDATA:00~sID:H08 sNAME:BASE I Flags sDATA:0000~sID:H09 sNAME:Message Status Flags sDATA:000000~sID:H10 sNAME:Batch Number sDATA:00~sID:H11 sNAME:Reserved sDATA:000000~sID:H12 sNAME:User Information sDATA:00~sID:MTI sNAME:Message Type Indicator sDATA:0110~sID:BMP sNAME:BitMap sDATA:722022810EC08006~sID:F2 sNAME:Primary Account Number sDATA:4176662220010018~sID:F3 sNAME:Processing Code sDATA:001000~sID:F4 sNAME:Amount Transaction sDATA:000000060000~sID:F7 sNAME:Transmission Date and Time sDATA:0608140112~sID:F11 sNAME:System Trace Audit Number sDATA:154212~sID:F15 sNAME:Date, Settlement sDATA:~sID:F19 sNAME:Acquiring Country Code sDATA:404~sID:F23 sNAME:Card Sequence Number sDATA:017~sID:F25 sNAME:POS Condition Code sDATA:00~sID:F32 sNAME:Acquiring ID sDATA:458784~sID:F37 sNAME:Retrieval Reference Number sDATA:515983020180~sID:F38 sNAME:Authorization Identification Response sDATA:002710~sID:F39 sNAME:Response Code sDATA:00~sID:F41 sNAME:Card Acceptor Terminal Id sDATA:00087130~sID:F42 sNAME:Card Acceptor Id Code sDATA:8637241449     ~sID:F49 sNAME:Currency Code, Transaction sDATA:404~sID:F55 sNAME:Chip Data sDATA:~sID:F62 sNAME:Custom Payment Service Fields sDATA:0000000000000000~sID:F62 BMP sNAME:Bitmap sDATA:0000000000000000~sID:F62.2 sNAME:Transaction Identifier sDATA:~sID:F63 sNAME:SMS Private-Use Fields sDATA:8000000000~sID:F63 BMP sNAME:Bitmap sDATA:800000~sID:F63.1 sNAME:Network Identification Code sDATA:0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0110 Out Rsp
-ISO^WARNING^^^20250608170112^0100 ISO Message, INCOMING (VIS). Match found~sID:H01 sNAME:Header Length sDATA:ValidValue sACDATA:16~sID:H02 sNAME:Header Flag and Format sDATA:01 sACDATA:01~sID:H03 sNAME:Text Format sDATA:02 sACDATA:02~sID:H04 sNAME:Total Message Length sDATA:ValidValue sACDATA:0147~sID:H05 sNAME:Destination Station Id sDATA:ValidValue sACDATA:000000~sID:H06 sNAME:Source Station Id sDATA:ValidValue sACDATA:192425~sID:H07 sNAME:Round Trip Control Information sDATA:ValidValue sACDATA:00~sID:H08 sNAME:BASE I Flags sDATA:ValidValue sACDATA:0000~sID:H09 sNAME:Message Status Flags sDATA:ValidValue sACDATA:000000~sID:H10 sNAME:Batch Number sDATA:ValidValue sACDATA:00~sID:H11 sNAME:Reserved sDATA:ValidValue sACDATA:000000~sID:H12 sNAME:User Information sDATA:ValidValue sACDATA:00~sID:MTI sNAME:Message Type Indicator sDATA:0100 sACDATA:0100~sID:BMP sNAME:BitMap sDATA:ValidValue sACDATA:723C668128E08216~sID:F2 sNAME:Primary Account Number sDATA:ValidValue sACDATA:4176662220010018~sID:F3 sNAME:Processing Code sDATA:SubfieldLevel sACDATA:000000~sID:F3.1 sNAME:Transaction Type sDATA:00 sACDATA:00~sID:F3.2 sNAME:Account Type From sDATA:ValidValue sACDATA:00~sID:F3.3 sNAME:Account Type To sDATA:00 sACDATA:00~sID:F4 sNAME:Amount Transaction sDATA:ValidValue sACDATA:000000060000~sID:F7 sNAME:Transmission Date and Time sDATA:ValidValue sACDATA:0608140112~sID:F11 sNAME:System Trace Audit Number sDATA:ValidValue sACDATA:154212~sID:F12 sNAME:Time, Local Transmission sDATA:ValidValue sACDATA:100112~sID:F13 sNAME:Date, Local Transmission sDATA:ValidValue sACDATA:0608~sID:F14 sNAME:Expiration Date sDATA:ValidValue sACDATA:3112~sID:F15 sNAME:Date, Settlement sDATA:ValidValue sACDATA:{Expected, But Not Received}~sID:F18 sNAME:Merchant's Type sDATA:4511 sACDATA:5411~sID:F19 sNAME:Acquiring Country Code sDATA:ValidValue sACDATA:404~sID:F22 sNAME:POS Entry Mode Code sDATA:SubfieldLevel sACDATA:0710~sID:F22.1 sNAME:PAN/Date Entry Mode sDATA:05 sACDATA:07~sID:F22.2 sNAME:PIN Entry Capability sDATA:ValidValue sACDATA:1~sID:F22.3 sNAME:Filler sDATA:ValidValue sACDATA:0~sID:F23 sNAME:Card Sequence Number sDATA:ValidValue sACDATA:017~sID:F25 sNAME:POS Condition Code sDATA:ValidValue sACDATA:00~sID:F32 sNAME:Acquiring ID sDATA:ValidValue sACDATA:458784~sID:F35 sNAME:Track 2 Data sDATA:SubfieldLevel sACDATA:4176662220010018D311220110393361~sID:F35.01 sNAME:PAN sDATA:ValidValue sACDATA:4176662220010018~sID:F35.02 sNAME:Separator sDATA:D sACDATA:D~sID:F35.03 sNAME:Expiration Date sDATA:ValidValue sACDATA:3112~sID:F35.04 sNAME:Service Code sDATA:ValidValue sACDATA:201~sID:F35.05 sNAME:PVV sDATA:ValidValue sACDATA:10393~sID:F35.06 sNAME:Discretionary Data sDATA:ValidValue sACDATA:361~sID:F37 sNAME:Retrieval Reference Number sDATA:ValidValue sACDATA:515983020180~sID:F41 sNAME:Card Acceptor Terminal Id sDATA:ValidValue sACDATA:00087130~sID:F42 sNAME:Card Acceptor Id Code sDATA:ValidValue sACDATA:8637241449     ~sID:F43 sNAME:Card Acceptor Name/Location sDATA:ValidValue sACDATA:TUSKYS KILIFI            KILIFI       KE~sID:F44 sNAME:Additional Response Data sDATA:ValidValue sACDATA:{Expected, But Not Received}~sID:F49 sNAME:Currency Code, Transaction sDATA:ValidValue sACDATA:404~sID:F55 sNAME:Chip Data sDATA:SubfieldLevel sACDATA:01007C9F3303E068E8950500000000009F37047D235C409F10201F220100A000000000564953414C3354455354434153450000000000000000009F26082B712DE8F10B55A09F36020002820220009C01009F1A0204049A032506089F02060000000600005F2A0204049F03060000000000009F6E04207000009F3403000000~sID:F55.1 sNAME:Dataset ID sDATA:ValidValue sACDATA:01~sID:F55.2 sNAME:Dataset Length sDATA:ValidValue sACDATA:007C~sID:F55.3 sNAME:Tag 9F33 - Terminal Capability Profile sDATA:ValidValue sACDATA:9F3303E068E8~sID:F55.4 sNAME:Tag 95 - Terminal Verification Results (TVR) sDATA:ValidValue sACDATA:95050000000000~sID:F55.5 sNAME:Tag 9F37 - Unpredictable Number sDATA:ValidValue sACDATA:9F37047D235C40~sID:F55.7 sNAME:Tag 9F10 - Issuer Application Data (IAD) sDATA:SubfieldLevel sACDATA:9F10201F220100A000000000564953414C335445535443415345000000000000000000~sID:F55.7.1 sNAME:TLV Tag ID sDATA:9F10 sACDATA:9F10~sID:F55.7.2 sNAME:TLV Length sDATA:ValidValue sACDATA:20~sID:F55.7.3 sNAME:TLV Length 1 sDATA:ValidValue sACDATA:1F~sID:F55.7.4 sNAME:TLV Value 1 (VISA DISCRE DATA) sDATA:ValidValue sACDATA:{Expected, But Not Received}~sID:F55.7.5 sNAME:TLV Length 2 sDATA:{Received, But Not Expected} sACDATA:22~sID:F55.7.7 sNAME:TLV Value 3 sDATA:{Received, But Not Expected} sACDATA:0100A000000000564953414C335445535443415345000000000000000000~sID:F55.8 sNAME:Tag 9F26 - Cryptogram sDATA:ValidValue sACDATA:9F26082B712DE8F10B55A0~sID:F55.9 sNAME:Tag 9F36 - Application Transaction Counter sDATA:ValidValue sACDATA:9F36020002~sID:F55.10 sNAME:Tag 82 - Application Interchange Profile sDATA:ValidValue sACDATA:82022000~sID:F55.11 sNAME:Tag 9C - Cryptogram Transaction Type sDATA:ValidValue sACDATA:9C0100~sID:F55.12 sNAME:Tag 9F1A - Terminal Country Code sDATA:ValidValue sACDATA:9F1A020404~sID:F55.13 sNAME:Tag 9A - Terminal Transaction Date (YYMMDD) sDATA:ValidValue sACDATA:9A03250608~sID:F55.14 sNAME:Tag 9F02 - Cryptogram Amount sDATA:ValidValue sACDATA:9F0206000000060000~sID:F55.15 sNAME:Tag 5F2A - Cryptogram Currency Code sDATA:ValidValue sACDATA:5F2A020404~sID:F55.16 sNAME:Tag 9F03 - Cryptogram Cashback Amount sDATA:ValidValue sACDATA:9F0306000000000000~sID:F55.21 sNAME:Tag 9F6E - Form Factor Indicator sDATA:{Received, But Not Expected} sACDATA:9F6E0420700000~sID:F55.23 sNAME:Tag 84 - Application Identifier (AID) sDATA:ValidValue sACDATA:{Expected, But Not Received}~sID:F55.25 sNAME:Tag 9F34 - CVM Results sDATA:{Received, But Not Expected} sACDATA:9F3403000000~sID:F60 sNAME:Additional POS Information sDATA:ValidValue sACDATA:050000100001~sID:F62 sNAME:Custom Payment Service Fields sDATA:SubfieldLevel sACDATA:00001000000000005901110200~sID:F62 BMP sNAME:Bitmap sDATA:ValidValue sACDATA:0000100000000000~sID:F62.20 sNAME:Merchant Verification Value sDATA:{Received, But Not Expected} sACDATA:5901110200~sID:F62.23 sNAME:Product ID sDATA:ValidValue sACDATA:{Expected, But Not Received}~sID:F63 sNAME:SMS Private-Use Fields sDATA:SubfieldLevel sACDATA:8000000000~sID:F63 BMP sNAME:  sDATA:ValidValue sACDATA:800000~sID:F63.1 sNAME:Network Identification Code sDATA:ValidValue sACDATA:0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0100 In Req
-'''
+    # Define input and output directories
+    input_folder = "VISA Logs"  # Folder containing log files
+    output_folder = "xml_output"  # Folder to save XML files
 
-    # Parse log and generate XML
-    parsed_messages = parse_inovant_log(log_string)
-    
-    # Print summary of fields
-    for msg in parsed_messages:
-        print(f"\nSummary for MTI {msg['mti']} ({msg['class']}):")
-        print(f"All extracted field IDs: {msg['all_field_ids']}")
-        print(f"Fields included in XML: {[f['id'] for f in msg['fields']]}")
+    # Create output folder if it doesn't exist
+    os.makedirs(output_folder, exist_ok=True)
 
-    xml_root = generate_emvco_l3_xml(parsed_messages)
+    # Find all log files in the input folder (e.g., *.log, *.txt)
+    log_files = glob.glob(os.path.join(input_folder, "*.log")) + glob.glob(os.path.join(input_folder, "*.txt"))
 
-    # Write to file
-    with open("emvco_output.xml", "wb") as f:
-        f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
-        f.write(ET.tostring(xml_root, pretty_print=True, encoding="utf-8"))
+    if not log_files:
+        print(f"No log files found in {input_folder}. Exiting.")
+        exit(1)
 
-    print("\n✅ XML written to emvco_output.xml")
+    # Process each log file
+    success_count = 0
+    failure_count = 0
+
+    for log_file in log_files:
+        # Generate output XML file path
+        base_name = os.path.basename(log_file)
+        output_file = os.path.join(output_folder, base_name.rsplit('.', 1)[0] + ".xml")
+        
+        # Process the file
+        if process_log_file(log_file, output_file):
+            success_count += 1
+        else:
+            failure_count += 1
+
+    # Summary
+    print(f"\nProcessing complete. Successfully converted {success_count} files. Failed on {failure_count} files.")

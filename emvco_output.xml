@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EMVCoL3OnlineMessageFormat>
   <LogDetails>
-    <Date-Time>2025-06-13T05:23:14Z</Date-Time>
+    <Date-Time>2025-06-13T05:42:32Z</Date-Time>
     <LoggingTool>
       <ProductName>Inovant VTS Simulator</ProductName>
       <ProductVersion>1.0.0</ProductVersion>
@@ -28,7 +28,7 @@
   </ConnectionList>
   <OnlineMessageList>
     <OnlineMessage Class="Response" Source="TestIssuer|Network" Destination="N/A">
-      <RawData>722022810EC08006F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8F0F0F1F0F0F0F0F0F0F0F0F0F0F6F0F0F0F0F0F6F0F8F1F4F0F1F1F2F1F5F4F2F1F2F4F0F4F0F1F7F0F0F4F5F8F7F8F4F5F1F5F9F8F3F0F2F0F1F8F0F0F0F2F7F1F0F0F0F0F0F0F8F7F1F3F0F8F6F3F7F2F4F1F4F4F9F4F0F4F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F8F0F0F0F0F0F0F0F0F0</RawData>
+      <RawData>722022810EC08206F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1F0F0F1F0F0F0F0F0F0F0F0F0F0F0F5F0F0F0F0F6F0F7F0F7F4F4F2F0F1F5F4F0F8F7F4F0F4F0F0F1F0F0F4F5F8F7F8F4F5F1F5F8F8F3F0F2F0F1F1F1F0F0F7F1F7F1F0F0F0F0F0F8F7F1F3F0F8F6F3F7F2F4F1F4F4F9F4F0F4F0F1F0F0F0C6F9C6F1F0F0F7F0F6F0F1F1F2F0F3C1F0F0F0F0F0F9C6F3F6F0F2F0F0F0F1F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F8F0F0F0F0F0F0F0F0F0</RawData>
       <MessageInfo>
         <PINValidated>N/A</PINValidated>
         <ARQCValidated>N/A</ARQCValidated>
@@ -36,20 +36,20 @@
         <CVC3Track1Validated>N/A</CVC3Track1Validated>
         <CVC3Track2Validated>N/A</CVC3Track2Validated>
         <ToolComment>Authorization Request Response</ToolComment>
-        <Date-Time>2025-06-13T05:23:14Z</Date-Time>
+        <Date-Time>2025-06-13T05:42:32Z</Date-Time>
       </MessageInfo>
       <FieldList>
         <Field ID="NET.0110.DE.-1">
           <FriendlyName>BitMap</FriendlyName>
           <FieldType>b8</FieldType>
-          <FieldBinary>F7F2F2F0F2F2F8F1F0C5C3F0F8F0F0F6</FieldBinary>
-          <FieldViewable>722022810EC08006</FieldViewable>
+          <FieldBinary>F7F2F2F0F2F2F8F1F0C5C3F0F8F2F0F6</FieldBinary>
+          <FieldViewable>722022810EC08206</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.2">
           <FriendlyName>Primary Account Number</FriendlyName>
           <FieldType>AN..999</FieldType>
-          <FieldBinary>F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8</FieldBinary>
-          <FieldViewable>4176662220010018</FieldViewable>
+          <FieldBinary>F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1</FieldBinary>
+          <FieldViewable>4761730000000011</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.3">
           <FriendlyName>Processing Code</FriendlyName>
@@ -60,20 +60,20 @@
         <Field ID="NET.0110.DE.4">
           <FriendlyName>Amount Transaction</FriendlyName>
           <FieldType>AN..999</FieldType>
-          <FieldBinary>F0F0F0F0F0F0F0F6F0F0F0F0</FieldBinary>
-          <FieldViewable>000000060000</FieldViewable>
+          <FieldBinary>F0F0F0F0F0F0F0F0F5F0F0F0</FieldBinary>
+          <FieldViewable>000000005000</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.7">
           <FriendlyName>Transmission Date and Time</FriendlyName>
           <FieldType>AN..999</FieldType>
-          <FieldBinary>F0F6F0F8F1F4F0F1F1F2</FieldBinary>
-          <FieldViewable>0608140112</FieldViewable>
+          <FieldBinary>F0F6F0F7F0F7F4F4F2F0</FieldBinary>
+          <FieldViewable>0607074420</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.11">
           <FriendlyName>System Trace Audit Number</FriendlyName>
           <FieldType>n6</FieldType>
-          <FieldBinary>F1F5F4F2F1F2</FieldBinary>
-          <FieldViewable>154212</FieldViewable>
+          <FieldBinary>F1F5F4F0F8F7</FieldBinary>
+          <FieldViewable>154087</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.19">
           <FriendlyName>Acquiring Country Code</FriendlyName>
@@ -84,8 +84,8 @@
         <Field ID="NET.0110.DE.23">
           <FriendlyName>Card Sequence Number</FriendlyName>
           <FieldType>n3</FieldType>
-          <FieldBinary>F0F1F7</FieldBinary>
-          <FieldViewable>017</FieldViewable>
+          <FieldBinary>F0F0F1</FieldBinary>
+          <FieldViewable>001</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.25">
           <FriendlyName>POS Condition Code</FriendlyName>
@@ -102,14 +102,14 @@
         <Field ID="NET.0110.DE.37">
           <FriendlyName>Retrieval Reference Number</FriendlyName>
           <FieldType>ANS12</FieldType>
-          <FieldBinary>F5F1F5F9F8F3F0F2F0F1F8F0</FieldBinary>
-          <FieldViewable>515983020180</FieldViewable>
+          <FieldBinary>F5F1F5F8F8F3F0F2F0F1F1F1</FieldBinary>
+          <FieldViewable>515883020111</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.38">
           <FriendlyName>Authorization Identification Response</FriendlyName>
           <FieldType>ANS6</FieldType>
-          <FieldBinary>F0F0F2F7F1F0</FieldBinary>
-          <FieldViewable>002710</FieldViewable>
+          <FieldBinary>F0F0F7F1F7F1</FieldBinary>
+          <FieldViewable>007171</FieldViewable>
         </Field>
         <Field ID="NET.0110.DE.39">
           <FriendlyName>Response Code</FriendlyName>
@@ -134,6 +134,91 @@
           <FieldType>n3</FieldType>
           <FieldBinary>F4F0F4</FieldBinary>
           <FieldViewable>404</FieldViewable>
+        </Field>
+        <Field ID="NET.0110.DE.55">
+          <FriendlyName>Chip Data</FriendlyName>
+          <FieldType>B..255</FieldType>
+          <FieldBinary>F0F1F0F0F0C6F9C6F1F0F0F7F0F6F0F1F1F2F0F3C1F0F0F0F0F0F9C6F3F6F0F2F0F0F0F1</FieldBinary>
+          <FieldViewable>01000F9F100706011203A000009F36020001</FieldViewable>
+          <FieldList>
+            <Field ID="NET.0110.DE.055.TAG.1">
+              <FriendlyName>Dataset ID</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F1</FieldBinary>
+              <FieldViewable>01</FieldViewable>
+              <EMVData Tag="1" Name="Dataset ID" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.2">
+              <FriendlyName>Dataset Length</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F0F0C6</FieldBinary>
+              <FieldViewable>000F</FieldViewable>
+              <EMVData Tag="2" Name="Dataset Length" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.7">
+              <FriendlyName>Tag 9F10 - Issuer Application Data (IAD)</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F9C6F1F0F0F7F0F6F0F1F1F2F0F3C1F0F0F0F0F0</FieldBinary>
+              <FieldViewable>9F100706011203A00000</FieldViewable>
+              <EMVData Tag="7" Name="Tag 9F10 - Issuer Application Data (IAD)" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.1">
+              <FriendlyName>TLV Tag ID</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F9C6F1F0</FieldBinary>
+              <FieldViewable>9F10</FieldViewable>
+              <EMVData Tag="1" Name="TLV Tag ID" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.2">
+              <FriendlyName>TLV Length</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F7</FieldBinary>
+              <FieldViewable>07</FieldViewable>
+              <EMVData Tag="2" Name="TLV Length" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.3">
+              <FriendlyName>TLV Length 1</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F6</FieldBinary>
+              <FieldViewable>06</FieldViewable>
+              <EMVData Tag="3" Name="TLV Length 1" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.4">
+              <FriendlyName>TLV Value 1 (VISA DISCRE DATA)</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F1F1F2F0F3C1F0F0F0F0F0</FieldBinary>
+              <FieldViewable>011203A00000</FieldViewable>
+              <EMVData Tag="4" Name="TLV Value 1 (VISA DISCRE DATA)" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.9">
+              <FriendlyName>Tag 9F36 - Application Transaction Counter</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F9C6F3F6F0F2F0F0F0F1</FieldBinary>
+              <FieldViewable>9F36020001</FieldViewable>
+              <EMVData Tag="9" Name="Tag 9F36 - Application Transaction Counter" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.1">
+              <FriendlyName>TLV Tag ID</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F9C6F3F6</FieldBinary>
+              <FieldViewable>9F36</FieldViewable>
+              <EMVData Tag="1" Name="TLV Tag ID" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.2">
+              <FriendlyName>TLV Length</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F2</FieldBinary>
+              <FieldViewable>02</FieldViewable>
+              <EMVData Tag="2" Name="TLV Length" Format="V"/>
+            </Field>
+            <Field ID="NET.0110.DE.055.TAG.3">
+              <FriendlyName>TLV Value 1 (APPL TXN CNTR)</FriendlyName>
+              <FieldType>B..255</FieldType>
+              <FieldBinary>F0F0F0F1</FieldBinary>
+              <FieldViewable>0001</FieldViewable>
+              <EMVData Tag="3" Name="TLV Value 1 (APPL TXN CNTR)" Format="V"/>
+            </Field>
+          </FieldList>
         </Field>
         <Field ID="NET.0110.DE.62">
           <FriendlyName>Custom Payment Service Fields</FriendlyName>
@@ -166,7 +251,7 @@
       </FieldList>
     </OnlineMessage>
     <OnlineMessage Class="Request" Source="N/A" Destination="TestIssuer|Network">
-      <RawData>723C668128E08216F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8F0F0F0F0F0F0F0F0F0F0F0F0F0F6F0F0F0F0F0F6F0F8F1F4F0F1F1F2F1F5F4F2F1F2F1F0F0F1F1F2F0F6F0F8F3F1F1F240C5404040404040404040C2404040D5404040D94040404040404040F5F4F1F1F4F0F4F0F7F1F0F0F1F7F0F0F4F5F8F7F8F4F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8C4F3F1F1F2F2F0F1F1F0F3F9F3F3F6F1F5F1F5F9F8F3F0F2F0F1F8F0F0F0F0F8F7F1F3F0F8F6F3F7F2F4F1F4F4F9E3E4E2D2E8E240D2C9D3C9C6C9404040404040404040404040D2C9D3C9C6C940404040404040D2C540C5404040404040404040C2404040D5404040D94040404040404040F4F0F4F0F1F0F0F7C3F9C6F3F3F0F3C5F0F6F8C5F8F9F5F0F5F0F0F0F0F0F0F0F0F0F0F9C6F3F7F0F4F7C4F2F3F5C3F4F0F9C6F1F0F2F0F1C6F2F2F0F1F0F0C1F0F0F0F0F0F0F0F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F9C6F2F6F0F8F2C2F7F1F2C4C5F8C6F1F0C2F5F5C1F0F9C6F3F6F0F2F0F0F0F2F8F2F0F2F2F0F0F0F9C3F0F1F0F0F9C6F1C1F0F2F0F4F0F4F9C1F0F3F2F5F0F6F0F8F9C6F0F2F0F6F0F0F0F0F0F0F0F6F0F0F0F0F5C6F2C1F0F2F0F4F0F4F9C6F0F3F0F6F0F0F0F0F0F0F0F0F0F0F0F0F9C6F6C5F0F4F2F0F7F0F0F0F0F0F9C6F3F4F0F3F0F0F0F0F0F0F0F5F0F0F0F0F1F0F0F0F0F1F0F0F0F0F1F0F0F0F0F0F0F0F0F0F0F0F5F9F0F1F1F1F0F2F0F0F8F0F0F0F0F0F0F0F0F0</RawData>
+      <RawData>723C668128E08216F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1F0F0F0F0F0F0F0F0F0F0F0F0F0F0F5F0F0F0F0F6F0F7F0F7F4F4F2F0F1F5F4F0F8F7F0F3F4F4F1F8F0F6F0F7F3F1F1F240C5404040404040404040C2404040D5404040D94040404040404040F5F4F1F1F4F0F4F0F5F1F0F0F0F1F0F0F4F5F8F7F8F4F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1C4F3F1F1F2F2F0F1F1F3F0F3F1F0F0F6F5F1F5F8F8F3F0F2F0F1F1F1F0F0F0F8F7F1F3F0F8F6F3F7F2F4F1F4F4F9E3E4E2D2E8E240D2C9D3C9C6C9404040404040404040404040D2C9D3C9C6C940404040404040D2C540C5404040404040404040C2404040D5404040D94040404040404040F4F0F4F0F1F0F0F6C3F9C6F3F3F0F3C5F0F6F8C5F8F9F5F0F5F8F0F8F0F0F0F8F0F0F0F9C6F3F7F0F4C6F5F7C4C2F8F0F5F9C6F1F0F1F7F0F6F0F1F1F2F0F3C1F0F0F0F0F0F0C6F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5F9C6F2F6F0F8F0F2C5F5F7C1F3C1F4F1C1C1C3F0C2F1F9C6F3F6F0F2F0F0F0F1F8F2F0F2F1F8F0F0F9C3F0F1F0F0F9C6F1C1F0F2F0F4F0F4F9C1F0F3F2F5F0F6F0F7F9C6F0F2F0F6F0F0F0F0F0F0F0F0F5F0F0F0F5C6F2C1F0F2F0F4F0F4F9C6F0F3F0F6F0F0F0F0F0F0F0F0F0F0F0F0F9C6F3F4F0F3F1C5F0F3F0F0F0F5F0F0F0F0F1F0F0F0F0F1F0F0F0F0F1F0F0F0F0F0F0F0F0F0F0F0F5F9F0F1F1F1F0F2F0F0F8F0F0F0F0F0F0F0F0F0</RawData>
       <MessageInfo>
         <PINValidated>N/A</PINValidated>
         <ARQCValidated>true</ARQCValidated>
@@ -174,7 +259,7 @@
         <CVC3Track1Validated>N/A</CVC3Track1Validated>
         <CVC3Track2Validated>N/A</CVC3Track2Validated>
         <ToolComment>Authorization Request</ToolComment>
-        <Date-Time>2025-06-13T05:23:14Z</Date-Time>
+        <Date-Time>2025-06-13T05:42:32Z</Date-Time>
       </MessageInfo>
       <FieldList>
         <Field ID="NET.0100.DE.-1">
@@ -186,8 +271,8 @@
         <Field ID="NET.0100.DE.2">
           <FriendlyName>Primary Account Number</FriendlyName>
           <FieldType>AN..999</FieldType>
-          <FieldBinary>F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8</FieldBinary>
-          <FieldViewable>4176662220010018</FieldViewable>
+          <FieldBinary>F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1</FieldBinary>
+          <FieldViewable>4761730000000011</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.3">
           <FriendlyName>Processing Code</FriendlyName>
@@ -218,32 +303,32 @@
         <Field ID="NET.0100.DE.4">
           <FriendlyName>Amount Transaction</FriendlyName>
           <FieldType>AN..999</FieldType>
-          <FieldBinary>F0F0F0F0F0F0F0F6F0F0F0F0</FieldBinary>
-          <FieldViewable>000000060000</FieldViewable>
+          <FieldBinary>F0F0F0F0F0F0F0F0F5F0F0F0</FieldBinary>
+          <FieldViewable>000000005000</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.7">
           <FriendlyName>Transmission Date and Time</FriendlyName>
           <FieldType>AN..999</FieldType>
-          <FieldBinary>F0F6F0F8F1F4F0F1F1F2</FieldBinary>
-          <FieldViewable>0608140112</FieldViewable>
+          <FieldBinary>F0F6F0F7F0F7F4F4F2F0</FieldBinary>
+          <FieldViewable>0607074420</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.11">
           <FriendlyName>System Trace Audit Number</FriendlyName>
           <FieldType>n6</FieldType>
-          <FieldBinary>F1F5F4F2F1F2</FieldBinary>
-          <FieldViewable>154212</FieldViewable>
+          <FieldBinary>F1F5F4F0F8F7</FieldBinary>
+          <FieldViewable>154087</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.12">
           <FriendlyName>Time, Local Transmission</FriendlyName>
           <FieldType>DateTime hhmmss</FieldType>
-          <FieldBinary>F1F0F0F1F1F2</FieldBinary>
-          <FieldViewable>100112</FieldViewable>
+          <FieldBinary>F0F3F4F4F1F8</FieldBinary>
+          <FieldViewable>034418</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.13">
           <FriendlyName>Date, Local Transmission</FriendlyName>
           <FieldType>DateTime MMDD</FieldType>
-          <FieldBinary>F0F6F0F8</FieldBinary>
-          <FieldViewable>0608</FieldViewable>
+          <FieldBinary>F0F6F0F7</FieldBinary>
+          <FieldViewable>0607</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.14">
           <FriendlyName>Expiration Date</FriendlyName>
@@ -272,14 +357,14 @@
         <Field ID="NET.0100.DE.22">
           <FriendlyName>POS Entry Mode Code</FriendlyName>
           <FieldType>n3</FieldType>
-          <FieldBinary>F0F7F1F0</FieldBinary>
-          <FieldViewable>0710</FieldViewable>
+          <FieldBinary>F0F5F1F0</FieldBinary>
+          <FieldViewable>0510</FieldViewable>
           <FieldList>
             <Field ID="NET.0100.DE.F22.SE.1">
               <FriendlyName>PAN/Date Entry Mode</FriendlyName>
               <FieldType>n3</FieldType>
-              <FieldBinary>F0F7</FieldBinary>
-              <FieldViewable>07</FieldViewable>
+              <FieldBinary>F0F5</FieldBinary>
+              <FieldViewable>05</FieldViewable>
             </Field>
             <Field ID="NET.0100.DE.F22.SE.2">
               <FriendlyName>PIN Entry Capability</FriendlyName>
@@ -298,8 +383,8 @@
         <Field ID="NET.0100.DE.23">
           <FriendlyName>Card Sequence Number</FriendlyName>
           <FieldType>n3</FieldType>
-          <FieldBinary>F0F1F7</FieldBinary>
-          <FieldViewable>017</FieldViewable>
+          <FieldBinary>F0F0F1</FieldBinary>
+          <FieldViewable>001</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.25">
           <FriendlyName>POS Condition Code</FriendlyName>
@@ -316,14 +401,14 @@
         <Field ID="NET.0100.DE.35">
           <FriendlyName>Track 2 Data</FriendlyName>
           <FieldType>Z..37</FieldType>
-          <FieldBinary>F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8C4F3F1F1F2F2F0F1F1F0F3F9F3F3F6F1</FieldBinary>
-          <FieldViewable>4176662220010018D311220110393361</FieldViewable>
+          <FieldBinary>F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1C4F3F1F1F2F2F0F1F1F3F0F3F1F0F0F6</FieldBinary>
+          <FieldViewable>4761730000000011D311220113031006</FieldViewable>
           <FieldList>
             <Field ID="NET.0100.DE.F35.SE.01">
               <FriendlyName>PAN</FriendlyName>
               <FieldType>Z..37</FieldType>
-              <FieldBinary>F4F1F7F6F6F6F2F2F2F0F0F1F0F0F1F8</FieldBinary>
-              <FieldViewable>4176662220010018</FieldViewable>
+              <FieldBinary>F4F7F6F1F7F3F0F0F0F0F0F0F0F0F1F1</FieldBinary>
+              <FieldViewable>4761730000000011</FieldViewable>
             </Field>
             <Field ID="NET.0100.DE.F35.SE.02">
               <FriendlyName>Separator</FriendlyName>
@@ -346,22 +431,22 @@
             <Field ID="NET.0100.DE.F35.SE.05">
               <FriendlyName>PVV</FriendlyName>
               <FieldType>Z..37</FieldType>
-              <FieldBinary>F1F0F3F9F3</FieldBinary>
-              <FieldViewable>10393</FieldViewable>
+              <FieldBinary>F1F3F0F3F1</FieldBinary>
+              <FieldViewable>13031</FieldViewable>
             </Field>
             <Field ID="NET.0100.DE.F35.SE.06">
               <FriendlyName>Discretionary Data</FriendlyName>
               <FieldType>Z..37</FieldType>
-              <FieldBinary>F3F6F1</FieldBinary>
-              <FieldViewable>361</FieldViewable>
+              <FieldBinary>F0F0F6</FieldBinary>
+              <FieldViewable>006</FieldViewable>
             </Field>
           </FieldList>
         </Field>
         <Field ID="NET.0100.DE.37">
           <FriendlyName>Retrieval Reference Number</FriendlyName>
           <FieldType>ANS12</FieldType>
-          <FieldBinary>F5F1F5F9F8F3F0F2F0F1F8F0</FieldBinary>
-          <FieldViewable>515983020180</FieldViewable>
+          <FieldBinary>F5F1F5F8F8F3F0F2F0F1F1F1</FieldBinary>
+          <FieldViewable>515883020111</FieldViewable>
         </Field>
         <Field ID="NET.0100.DE.41">
           <FriendlyName>Card Acceptor Terminal Id</FriendlyName>
@@ -396,8 +481,8 @@
         <Field ID="NET.0100.DE.55">
           <FriendlyName>Chip Data</FriendlyName>
           <FieldType>B..255</FieldType>
-          <FieldBinary>F0F1F0F0F7C3F9C6F3F3F0F3C5F0F6F8C5F8F9F5F0F5F0F0F0F0F0F0F0F0F0F0F9C6F3F7F0F4F7C4F2F3F5C3F4F0F9C6F1F0F2F0F1C6F2F2F0F1F0F0C1F0F0F0F0F0F0F0F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F9C6F2F6F0F8F2C2F7F1F2C4C5F8C6F1F0C2F5F5C1F0F9C6F3F6F0F2F0F0F0F2F8F2F0F2F2F0F0F0F9C3F0F1F0F0F9C6F1C1F0F2F0F4F0F4F9C1F0F3F2F5F0F6F0F8F9C6F0F2F0F6F0F0F0F0F0F0F0F6F0F0F0F0F5C6F2C1F0F2F0F4F0F4F9C6F0F3F0F6F0F0F0F0F0F0F0F0F0F0F0F0F9C6F6C5F0F4F2F0F7F0F0F0F0F0F9C6F3F4F0F3F0F0F0F0F0F0</FieldBinary>
-          <FieldViewable>01007C9F3303E068E8950500000000009F37047D235C409F10201F220100A000000000564953414C3354455354434153450000000000000000009F26082B712DE8F10B55A09F36020002820220009C01009F1A0204049A032506089F02060000000600005F2A0204049F03060000000000009F6E04207000009F3403000000</FieldViewable>
+          <FieldBinary>F0F1F0F0F6C3F9C6F3F3F0F3C5F0F6F8C5F8F9F5F0F5F8F0F8F0F0F0F8F0F0F0F9C6F3F7F0F4C6F5F7C4C2F8F0F5F9C6F1F0F1F7F0F6F0F1F1F2F0F3C1F0F0F0F0F0F0C6F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5F9C6F2F6F0F8F0F2C5F5F7C1F3C1F4F1C1C1C3F0C2F1F9C6F3F6F0F2F0F0F0F1F8F2F0F2F1F8F0F0F9C3F0F1F0F0F9C6F1C1F0F2F0F4F0F4F9C1F0F3F2F5F0F6F0F7F9C6F0F2F0F6F0F0F0F0F0F0F0F0F5F0F0F0F5C6F2C1F0F2F0F4F0F4F9C6F0F3F0F6F0F0F0F0F0F0F0F0F0F0F0F0F9C6F3F4F0F3F1C5F0F3F0F0</FieldBinary>
+          <FieldViewable>01006C9F3303E068E8950580800080009F3704F57DB8059F101706011203A000000F00564953414C3354455354434153459F260802E57A3A41AAC0B19F36020001820218009C01009F1A0204049A032506079F02060000000050005F2A0204049F03060000000000009F34031E0300</FieldViewable>
           <FieldList>
             <Field ID="NET.0100.DE.055.TAG.1">
               <FriendlyName>Dataset ID</FriendlyName>
@@ -409,8 +494,8 @@
             <Field ID="NET.0100.DE.055.TAG.2">
               <FriendlyName>Dataset Length</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F0F0F7C3</FieldBinary>
-              <FieldViewable>007C</FieldViewable>
+              <FieldBinary>F0F0F6C3</FieldBinary>
+              <FieldViewable>006C</FieldViewable>
               <EMVData Tag="2" Name="Dataset Length" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.3">
@@ -423,22 +508,22 @@
             <Field ID="NET.0100.DE.055.TAG.4">
               <FriendlyName>Tag 95 - Terminal Verification Results (TVR)</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9F5F0F5F0F0F0F0F0F0F0F0F0F0</FieldBinary>
-              <FieldViewable>95050000000000</FieldViewable>
+              <FieldBinary>F9F5F0F5F8F0F8F0F0F0F8F0F0F0</FieldBinary>
+              <FieldViewable>95058080008000</FieldViewable>
               <EMVData Tag="4" Name="Tag 95 - Terminal Verification Results (TVR)" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.5">
               <FriendlyName>Tag 9F37 - Unpredictable Number</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F3F7F0F4F7C4F2F3F5C3F4F0</FieldBinary>
-              <FieldViewable>9F37047D235C40</FieldViewable>
+              <FieldBinary>F9C6F3F7F0F4C6F5F7C4C2F8F0F5</FieldBinary>
+              <FieldViewable>9F3704F57DB805</FieldViewable>
               <EMVData Tag="5" Name="Tag 9F37 - Unpredictable Number" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.7">
               <FriendlyName>Tag 9F10 - Issuer Application Data (IAD)</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F1F0F2F0F1C6F2F2F0F1F0F0C1F0F0F0F0F0F0F0F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0</FieldBinary>
-              <FieldViewable>9F10201F220100A000000000564953414C335445535443415345000000000000000000</FieldViewable>
+              <FieldBinary>F9C6F1F0F1F7F0F6F0F1F1F2F0F3C1F0F0F0F0F0F0C6F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5</FieldBinary>
+              <FieldViewable>9F101706011203A000000F00564953414C335445535443415345</FieldViewable>
               <EMVData Tag="7" Name="Tag 9F10 - Issuer Application Data (IAD)" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.1">
@@ -451,57 +536,57 @@
             <Field ID="NET.0100.DE.055.TAG.2">
               <FriendlyName>TLV Length</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F2F0</FieldBinary>
-              <FieldViewable>20</FieldViewable>
+              <FieldBinary>F1F7</FieldBinary>
+              <FieldViewable>17</FieldViewable>
               <EMVData Tag="2" Name="TLV Length" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.3">
               <FriendlyName>TLV Length 1</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F1C6</FieldBinary>
-              <FieldViewable>1F</FieldViewable>
+              <FieldBinary>F0F6</FieldBinary>
+              <FieldViewable>06</FieldViewable>
               <EMVData Tag="3" Name="TLV Length 1" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.4">
               <FriendlyName>TLV Value 1 (VISA DISCRE DATA)</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>40C5404040404040404040C2404040D5404040D94040404040404040</FieldBinary>
-              <FieldViewable>{Expected, But Not Received}</FieldViewable>
+              <FieldBinary>F0F1F1F2F0F3C1F0F0F0F0F0</FieldBinary>
+              <FieldViewable>011203A00000</FieldViewable>
               <EMVData Tag="4" Name="TLV Value 1 (VISA DISCRE DATA)" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.5">
               <FriendlyName>TLV Length 2</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F2F2</FieldBinary>
-              <FieldViewable>22</FieldViewable>
+              <FieldBinary>F0C6</FieldBinary>
+              <FieldViewable>0F</FieldViewable>
               <EMVData Tag="5" Name="TLV Length 2" Format="V"/>
             </Field>
-            <Field ID="NET.0100.DE.055.TAG.7">
-              <FriendlyName>TLV Value 3</FriendlyName>
+            <Field ID="NET.0100.DE.055.TAG.6">
+              <FriendlyName>TLV Value 2 (ISS DISCRE DATA)</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F0F1F0F0C1F0F0F0F0F0F0F0F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0</FieldBinary>
-              <FieldViewable>0100A000000000564953414C335445535443415345000000000000000000</FieldViewable>
-              <EMVData Tag="7" Name="TLV Value 3" Format="V"/>
+              <FieldBinary>F0F0F5F6F4F9F5F3F4F1F4C3F3F3F5F4F4F5F5F3F5F4F4F3F4F1F5F3F4F5</FieldBinary>
+              <FieldViewable>00564953414C335445535443415345</FieldViewable>
+              <EMVData Tag="6" Name="TLV Value 2 (ISS DISCRE DATA)" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.8">
               <FriendlyName>Tag 9F26 - Cryptogram</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F2F6F0F8F2C2F7F1F2C4C5F8C6F1F0C2F5F5C1F0</FieldBinary>
-              <FieldViewable>9F26082B712DE8F10B55A0</FieldViewable>
+              <FieldBinary>F9C6F2F6F0F8F0F2C5F5F7C1F3C1F4F1C1C1C3F0C2F1</FieldBinary>
+              <FieldViewable>9F260802E57A3A41AAC0B1</FieldViewable>
               <EMVData Tag="8" Name="Tag 9F26 - Cryptogram" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.9">
               <FriendlyName>Tag 9F36 - Application Transaction Counter</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F3F6F0F2F0F0F0F2</FieldBinary>
-              <FieldViewable>9F36020002</FieldViewable>
+              <FieldBinary>F9C6F3F6F0F2F0F0F0F1</FieldBinary>
+              <FieldViewable>9F36020001</FieldViewable>
               <EMVData Tag="9" Name="Tag 9F36 - Application Transaction Counter" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.10">
               <FriendlyName>Tag 82 - Application Interchange Profile</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F8F2F0F2F2F0F0F0</FieldBinary>
-              <FieldViewable>82022000</FieldViewable>
+              <FieldBinary>F8F2F0F2F1F8F0F0</FieldBinary>
+              <FieldViewable>82021800</FieldViewable>
               <EMVData Tag="10" Name="Tag 82 - Application Interchange Profile" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.11">
@@ -521,15 +606,15 @@
             <Field ID="NET.0100.DE.055.TAG.13">
               <FriendlyName>Tag 9A - Terminal Transaction Date (YYMMDD)</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C1F0F3F2F5F0F6F0F8</FieldBinary>
-              <FieldViewable>9A03250608</FieldViewable>
+              <FieldBinary>F9C1F0F3F2F5F0F6F0F7</FieldBinary>
+              <FieldViewable>9A03250607</FieldViewable>
               <EMVData Tag="13" Name="Tag 9A - Terminal Transaction Date (YYMMDD)" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.14">
               <FriendlyName>Tag 9F02 - Cryptogram Amount</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F0F2F0F6F0F0F0F0F0F0F0F6F0F0F0F0</FieldBinary>
-              <FieldViewable>9F0206000000060000</FieldViewable>
+              <FieldBinary>F9C6F0F2F0F6F0F0F0F0F0F0F0F0F5F0F0F0</FieldBinary>
+              <FieldViewable>9F0206000000005000</FieldViewable>
               <EMVData Tag="14" Name="Tag 9F02 - Cryptogram Amount" Format="V"/>
             </Field>
             <Field ID="NET.0100.DE.055.TAG.15">
@@ -546,13 +631,6 @@
               <FieldViewable>9F0306000000000000</FieldViewable>
               <EMVData Tag="16" Name="Tag 9F03 - Cryptogram Cashback Amount" Format="V"/>
             </Field>
-            <Field ID="NET.0100.DE.055.TAG.21">
-              <FriendlyName>Tag 9F6E - Form Factor Indicator</FriendlyName>
-              <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F6C5F0F4F2F0F7F0F0F0F0F0</FieldBinary>
-              <FieldViewable>9F6E0420700000</FieldViewable>
-              <EMVData Tag="21" Name="Tag 9F6E - Form Factor Indicator" Format="V"/>
-            </Field>
             <Field ID="NET.0100.DE.055.TAG.23">
               <FriendlyName>Tag 84 - Application Identifier (AID)</FriendlyName>
               <FieldType>B..255</FieldType>
@@ -563,8 +641,8 @@
             <Field ID="NET.0100.DE.055.TAG.25">
               <FriendlyName>Tag 9F34 - CVM Results</FriendlyName>
               <FieldType>B..255</FieldType>
-              <FieldBinary>F9C6F3F4F0F3F0F0F0F0F0F0</FieldBinary>
-              <FieldViewable>9F3403000000</FieldViewable>
+              <FieldBinary>F9C6F3F4F0F3F1C5F0F3F0F0</FieldBinary>
+              <FieldViewable>9F34031E0300</FieldViewable>
               <EMVData Tag="25" Name="Tag 9F34 - CVM Results" Format="V"/>
             </Field>
           </FieldList>
@@ -581,6 +659,12 @@
           <FieldBinary>F0F0F0F0F1F0F0F0F0F0F0F0F0F0F0F0F5F9F0F1F1F1F0F2F0F0</FieldBinary>
           <FieldViewable>00001000000000005901110200</FieldViewable>
           <FieldList>
+            <Field ID="NET.0100.DE.F62.SE.2">
+              <FriendlyName>Transaction Identifier</FriendlyName>
+              <FieldType>B..999</FieldType>
+              <FieldBinary>40C5404040404040404040C2404040D5404040D94040404040404040</FieldBinary>
+              <FieldViewable>{Expected, But Not Received}</FieldViewable>
+            </Field>
             <Field ID="NET.0100.DE.F62.SE.20">
               <FriendlyName>Merchant Verification Value</FriendlyName>
               <FieldType>B..999</FieldType>
