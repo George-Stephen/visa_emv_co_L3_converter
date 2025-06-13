@@ -1,0 +1,5 @@
+./logs/*
+./xml_output/*
+*.zip
+*.log
+*.xml

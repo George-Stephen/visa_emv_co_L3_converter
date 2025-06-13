@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EMVCoL3OnlineMessageFormat>
+  <LogDetails>
+    <Date-Time>2025-06-05T06:44:56Z</Date-Time>
+    <LoggingTool>
+      <ProductName>Inovant VTS</ProductName>
+      <ProductVersion>1.0</ProductVersion>
+    </LoggingTool>
+    <SchemaSelectionIndex>1.1</SchemaSelectionIndex>
+    <Reference>EMVCo L3 Online Message Format</Reference>
+    <L3OMLVersion>1.1</L3OMLVersion>
+  </LogDetails>
+  <ConnectionList>
+    <Connection ID="VISA VSDC - Issuer|Network (Inovant VTS)">
+      <Protocol>
+        <FriendlyName>VISA VSDC</FriendlyName>
+        <SymbolicName>VISAVSDC</SymbolicName>
+        <VersionInfo>1.0.0</VersionInfo>
+      </Protocol>
+      <TCPIPParameters>
+        <Address>.</Address>
+        <Port>3001</Port>
+        <Header>prefixed:</Header>
+        <Client>false</Client>
+        <Format>ASCII</Format>
+      </TCPIPParameters>
+    </Connection>
+  </ConnectionList>
+  <OnlineMessageList>
+    <OnlineMessage Class="Request" Source="N/A" Destination="VISA VSDC - Issuer|Network (Inovant VTS)">
+      <RawData>0110722022810EC0820647617300000000110010000000000050000605074640152003404001515683020035000395000871308637241449     40401000F9F100706011203A000009F36020002</RawData>
+      <MessageInfo>
+        <PINValidated>N/A</PINValidated>
+        <ARQCValidated>true</ARQCValidated>
+        <MACValidated>N/A</MACValidated>
+        <CVC3Track1Validated>N/A</CVC3Track1Validated>
+        <CVC3Track2Validated>N/A</CVC3Track2Validated>
+        <ToolComment>Authorization Request</ToolComment>
+        <Date-Time>2025-06-05T07:46:40Z</Date-Time>
+      </MessageInfo>
+      <FieldList>
+        <Field ID="NET.0100.DE.-1">
+          <FriendlyName>Message type identifier</FriendlyName>
+          <FieldType>n4</FieldType>
+          <FieldBinary>30 31 31 30</FieldBinary>
+          <FieldViewable>0110</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.000">
+          <FriendlyName>Bitmap</FriendlyName>
+          <FieldType>b8</FieldType>
+          <FieldBinary>72 20 22 81 0E C0 82 06</FieldBinary>
+          <FieldViewable>722022810EC08206</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.002">
+          <FriendlyName>Primary account number (PAN)</FriendlyName>
+          <FieldType>N..19</FieldType>
+          <FieldBinary>34 37 36 31 37 33 30 30 30 30 30 30 30 30 31 31</FieldBinary>
+          <FieldViewable>4761730000000011</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.003">
+          <FriendlyName>Processing code</FriendlyName>
+          <FieldType>n6</FieldType>
+          <FieldBinary>30 30 31 30 30 30</FieldBinary>
+          <FieldViewable>001000</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.004">
+          <FriendlyName>Amount, transaction</FriendlyName>
+          <FieldType>n12</FieldType>
+          <FieldBinary>30 30 30 30 30 30 30 30 35 30 30 30</FieldBinary>
+          <FieldViewable>000000005000</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.007">
+          <FriendlyName>Transmission date and time</FriendlyName>
+          <FieldType>DateTime MMDDhhmmss</FieldType>
+          <FieldBinary>30 36 30 35 30 37 34 36 34 30</FieldBinary>
+          <FieldViewable>0605074640</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.011">
+          <FriendlyName>System trace audit number (STAN)</FriendlyName>
+          <FieldType>n6</FieldType>
+          <FieldBinary>31 35 32 30 30 33</FieldBinary>
+          <FieldViewable>152003</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.019">
+          <FriendlyName>Acquiring Country Code</FriendlyName>
+          <FieldType>n3</FieldType>
+          <FieldBinary>34 30 34</FieldBinary>
+          <FieldViewable>404</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.023">
+          <FriendlyName>Card sequence number</FriendlyName>
+          <FieldType>n3</FieldType>
+          <FieldBinary>30 30 31</FieldBinary>
+          <FieldViewable>001</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.032">
+          <FriendlyName>Acquiring Institution ID Code</FriendlyName>
+          <FieldType>N..6</FieldType>
+          <FieldBinary>34 35 38 37 38 34</FieldBinary>
+          <FieldViewable>458784</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.037">
+          <FriendlyName>Retrieval Reference Number</FriendlyName>
+          <FieldType>ANS12</FieldType>
+          <FieldBinary>35 31 35 36 38 33 30 32 30 30 33 35</FieldBinary>
+          <FieldViewable>515683020035</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.038">
+          <FriendlyName>Authorization ID Response</FriendlyName>
+          <FieldType>ANS6</FieldType>
+          <FieldBinary>30 30 30 33 39 35</FieldBinary>
+          <FieldViewable>000395</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.039">
+          <FriendlyName>Response code</FriendlyName>
+          <FieldType>an2</FieldType>
+          <FieldBinary>30 30</FieldBinary>
+          <FieldViewable>00</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.041">
+          <FriendlyName>Card Acceptor Terminal ID</FriendlyName>
+          <FieldType>ANS8</FieldType>
+          <FieldBinary>30 30 30 38 37 31 33 30</FieldBinary>
+          <FieldViewable>00087130</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.042">
+          <FriendlyName>Card Acceptor ID Code</FriendlyName>
+          <FieldType>ANS15</FieldType>
+          <FieldBinary>38 36 33 37 32 34 31 34 34 39 20 20 20 20 20</FieldBinary>
+          <FieldViewable>8637241449     </FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.049">
+          <FriendlyName>Currency code, transaction</FriendlyName>
+          <FieldType>n3</FieldType>
+          <FieldBinary>34 30 34</FieldBinary>
+          <FieldViewable>404</FieldViewable>
+        </Field>
+        <Field ID="NET.0100.DE.055">
+          <FriendlyName>Integrated Circuit Card (ICC) System-Related Data</FriendlyName>
+          <FieldType>B..255</FieldType>
+          <FieldBinary>01 00 0F 9F 10 07 06 01 12 03 A0 00 00 9F 36 02 00 02</FieldBinary>
+          <FieldViewable>01000F9F100706011203A000009F36020002</FieldViewable>
+          <FieldList>
+            <Field ID="NET.0100.DE.055.TAG.9F10">
+              <FriendlyName>Issuer Application Data</FriendlyName>
+              <EMVData Tag="9F10" Name="Issuer Application Data" Format="V" />
+              <FieldType>B..32</FieldType>
+              <FieldBinary>06 01 12 03 A0 00 00</FieldBinary>
+              <FieldViewable>011203A00000</FieldViewable>
+            </Field>
+            <Field ID="NET.0100.DE.055.TAG.9F36">
+              <FriendlyName>Application Transaction Counter (ATC)</FriendlyName>
+              <EMVData Tag="9F36" Name="Application Transaction Counter (ATC)" Format="V" />
+              <FieldType>b2</FieldType>
+              <FieldBinary>00 02</FieldBinary>
+              <FieldViewable>0002</FieldViewable>
+            </Field>
+          </FieldList>
+        </Field>
+      </FieldList>
+    </OnlineMessage>
+  </OnlineMessageList>
+</EMVCoL3OnlineMessageFormat>
